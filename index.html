@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Awesome Books</title>
+</head>
+<body>
+    <header>
+      <nav class="navbar">
+        <div>
+          <p class="logo">Awesome Books</p>
+        </div>
+        <div>
+          <ul class="nav-list">
+            <li class="lists">
+              <a class="link" href="#" id="booksList">Book list</a>
+            </li>
+            <li class="lists">
+              <a class="link" href="#" id="newBook">Add New</a>
+            </li>
+            <li class="lists-c">
+              <a class="link" href="#" id="Contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+        <span class="current-time" id="currentTime"></span>
+        <h1 id="main-title">All awesome books</h1>
+
+        <section id="books" class="books">
+        </section>
+
+        <section id="addform">
+          <h2>Add a new books</h2>
+          <form action="#" method="get">
+            <input id="title" type="text" placeholder="title" required>
+            <input id="author" type="text" placeholder="author" required>
+            <button id="addbutton" type="submit" >Add</button>
+          </form>
+        </section>
+
+        <section class="contact" id="contact" >
+          <h2 class="title">Contact Information</h2>
+          <p class="para">
+            Do you have any questions or you just want to say hello?<br />
+            You can reach out to us!
+          </p>
+          <ul>
+            <li class="info">our Email: mail@mail.com</li>
+            <li class="info">our Phone number: 00043586534422</li>
+            <li>Our Address: Streetname22, City, Country</li>        
+          </ul>
+        </section>
+    
+        <footer class="footer">
+          <p class="footer-p">Copyright</p>
+          <p class="footer-links"></p>
+        </footer>
+    </main>
+    <script src="./JS/index.js"></script>
+</body>
+</html>
