@@ -1,45 +1,35 @@
-/* eslint max-classes-per-file: ["error", 2] */
+import { add, addClassDisplay, delet } from './modules/add.js';
+import { DateTime } from './modules/luxon.js';
 
-const inputTitle = document.getElementById('title');
-const inputAuthor = document.getElementById('author');
-const submitButton = document.getElementById('addbutton');
-const currentTime = document.getElementById('currentTime');
+addClassDisplay('addNew');
+class NewBook {
+  static printf(input) {
+    document.getElementById('container-book').innerHTML = input.map((items, index) => `<div id="cards">
+    <p>"${items.title}" by ${items.author} </p>
+    <button id='buttonremove${index}' class="buttonRemove" type="submit">Remove</button>
+    </div>`).join('');
+  }
 
-onload=reload;
-
-function reload() {
-  bookSection.style.display = 'none'
-  form.style.display = 'contents'
-  mainTitle.style.display = 'none'
-  contact.style.display = 'none'
+  static sendDate() {
+    const myDate = DateTime.now();
+    document.getElementById('date').innerHTML = myDate.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+  }
 }
 
-class Book {
-    constructor(title, author) {
-      this.title = title;
-      this.author = author;
-    }
-}
+window.addEventListener('DOMContenLoaded', NewBook.printf(add()));
+window.addEventListener('DOMContenLoaded', NewBook.sendDate());
+setInterval(NewBook.sendDate, 1000);
 
-document.addEventListener('DOMContentLoaded', Manipulation.displayBooks);
-
-submitButton.addEventListener('click', Manipulation.addBook);
-
-bookSection.addEventListener('click', (e) => {
-  if (e.target.previousElementSibling) {
-    Manipulation.removeBook(e.target);
-    const newBooks = JSON.parse(localStorage.getItem('books'));
-    newBooks.forEach((book, index) => {
-      if (book.author === e.target.previousElementSibling.textContent) {
-        newBooks.splice(index, 1);
-      }
-    });
-    localStorage.setItem('books', JSON.stringify(newBooks));
+document.getElementById('add-book').addEventListener('click', () => NewBook.printf(add()));
+document.getElementById('nav-list').addEventListener('click', () => addClassDisplay('list'));
+document.getElementById('nav-new').addEventListener('click', () => addClassDisplay('addNew'));
+document.getElementById('nav-contact').addEventListener('click', () => addClassDisplay('contact'));
+const booksContainer = document.getElementById('container-book');
+booksContainer.addEventListener('click', (event) => {
+  const { id } = event.target;
+  const regex = /(?<=buttonremove)\d+$/;
+  if (regex.test(id)) {
+    const index = id.match(regex)[0];
+    NewBook.printf(delet(index));
   }
 });
-
-setInterval(() => {
-  const date = new Date();
-  currentTime.textContent = date;
-}, 500);
-

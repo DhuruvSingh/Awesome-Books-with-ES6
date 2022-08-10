@@ -1,69 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
-    <title>Awesome Books</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AwesomeBooksES6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css">
 </head>
+
+
 <body>
-    <header>
-      <nav class="navbar">
-        <div>
-          <p class="logo">Awesome Books</p>
-        </div>
-        <div>
-          <ul class="nav-list">
-            <li class="lists">
-              <a class="link" href="#" id="booksList">Book list</a>
-            </li>
-            <li class="lists">
-              <a class="link" href="#" id="newBook">Add New</a>
-            </li>
-            <li class="lists-c">
-              <a class="link" href="#" id="Contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main>
-        <span class="current-time" id="currentTime"></span>
-        <h1 id="main-title">All awesome books</h1>
 
-        <section id="books" class="books">
-        </section>
+  <header>
+    <nav>
+      <section class="nav-bar-1">
+        <h1>Awesome Books</h1>
+        <ul class="nav-bar-ul">
+          <li id='nav-list' class="border-left-none">List</li>
+          <li id='nav-new' class="active" >Add New</li>
+          <li id='nav-contact'>Contact</li>
+        </ul>
+      </section>
+      <section class="nav-bar-2">
+        <div id="date">March 19th 2021, 9:56 am</div>
+      </section>
+    </nav>
+  </header>
 
-        <section id="addform">
-          <h2>Add a new books</h2>
-          <form action="#" method="get">
-            <input id="title" type="text" placeholder="title" required>
-            <input id="author" type="text" placeholder="author" required>
-            <button id="addbutton" type="submit" >Add</button>
-          </form>
-        </section>
+  <main>
+    <section id="listContainer">
+      <h2>Awesome Book's</h2>
+      <div id="container-book"></div>
+    </section>
 
-        <section class="contact" id="contact" >
-          <h2 class="title">Contact Information</h2>
-          <p class="para">
-            Do you have any questions or you just want to say hello?<br />
-            You can reach out to us!
-          </p>
-          <ul>
-            <li class="info">our Email: mail@mail.com</li>
-            <li class="info">our Phone number: 00043586534422</li>
-            <li>Our Address: Streetname22, City, Country</li>        
-          </ul>
-        </section>
-    
-        <footer class="footer">
-          <p class="footer-p">Copyright</p>
-          <p class="footer-links"></p>
-        </footer>
-    </main>
-    <script type="module" src="./index.js"></script>
-    <script src="./modules/bookLibrary.js"></script>
-    <script src="./modules/pageChange.js"></script>
+
+    <section id="formContainer">
+      <h2>Add a new book</h2>
+      <form id="bookForm" action="#">
+        <input id="input-title"  type="text" placeholder="Title" required>
+        <input id="input-author" type="text" placeholder="Author" required>
+        <button id="add-book" type="submit" class="addbtn">Add</button>
+      </form>
+    </section>
+
+    <section id="contactContainer">
+      <h2>Contact Information</h2>
+    <div class="contactContainer-2">
+      <p>Do you have any questions or you just want to say "Hello"? <br> You cand reach out to us!</p>
+      <ul>
+        <li>Our e-mail: booklist@gmail.com</li>
+        <li>Our phone number: 08005554123</li>
+        <li>Our addres Street 22, 84503 City, Country</li>
+      </ul>
+    </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright</p>
+  </footer>
+  <script src="index.js" type="module"></script>
 </body>
+
+
 </html>
