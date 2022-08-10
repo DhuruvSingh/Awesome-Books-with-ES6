@@ -4,10 +4,6 @@
 
 > Book library with vanilla javascript.
 
-![screenshot1](./other-files/booklist.png)
-![screenshot2](./other-files/addnew.png)
-![screenshot3](./other-files/contactinformation.png)
-
 In this project, you will restructure your Awesome books app code. The goal is to make it more organized by using modules. You will also practice the ES6 syntax that you have learned.
 
 ## Built With
